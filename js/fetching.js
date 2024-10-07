@@ -1,5 +1,6 @@
 // loadSingleCategoryPets
 async function loadSingleCategoryPets(id){
+
   try{
     const res =await fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`);
     const {data} = await res.json();
@@ -8,8 +9,110 @@ async function loadSingleCategoryPets(id){
   catch(error){
     console.error('Error fetching data:', error);
   }
-    
-  // console.log(id);
+}
+// display single img on right div
+function showSingleImg(imgLink){
+  const petsImageContainer = document.getElementById("petsImageContainer");
+  const img = document.createElement("img");
+  img.classList.add("rounded-md");
+  img.setAttribute("src", imgLink);
+  petsImageContainer.appendChild(img);
+}
+// show details on modals
+function showDetails(petDetails){
+  const myModal = document.getElementById("myModal");
+  myModal.showModal();
+  myModal.innerHTML = `
+  <div class="modal-box space-y-5">
+          <img
+            class="w-full object-cover rounded-lg"
+            src="${petDetails.image}"
+            alt=""
+          />
+          <h2 class="font-Inter font-bold text-2xl text-color1 leading-7">
+            ${petDetails.pet_name}
+          </h2>
+          <div class="grid grid-cols-2 gap-8 text-color1.7 leading-5">
+            <div class="space-y-2">
+              <div class="flex gap-3">
+                <img src="./images/breed.svg" alt="" />
+                <p>
+                  Breed: ${(typeof petDetails.breed === "string") ?
+                  petDetails.breed : "Not available"}
+                </p>
+              </div>
+              <div class="flex gap-3">
+                <img src="./images/gender.svg" alt="" />
+                <p>
+                  Gender: ${(typeof petDetails.gender === "string") ?
+                  petDetails.gender : "Not available"}
+                </p>
+              </div>
+              <div class="flex gap-3">
+                <img src="./images/gender.svg" alt="" />
+                <p>
+                  Vaccinated status: ${(typeof petDetails.vaccinated_status ===
+                  "string") ? petDetails.vaccinated_status : "Not available"}
+                </p>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div class="flex gap-3">
+                <img src="./images/calender.svg" alt="" />
+                <p>Birth:</p>
+                <p>
+                  Birth: ${(typeof petDetails.date_of_birth === "string") ?
+                  (petDetails.date_of_birth).slice(0,4) : "Not available"}
+                </p>
+              </div>
+              <div class="flex gap-3">
+                <img src="./images/price.svg" alt="" />
+                <p>Price:</p>
+                <p>
+                  Price: ${(typeof petDetails.price === "number") ?
+                  petDetails.price + "$" : "Not available"}
+                </p>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <h2 class="font-Inter font-semibold text-color1 leading-5 my-3">
+            Details Information
+          </h2>
+          <div class="font-Inter leading-6 text-color1.7 text-justify">
+            <p>
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout.
+            </p>
+            <li>
+              The point of using is that it has a more-or-less normal
+              distribution of letters, as opposed to using.
+            </li>
+          </div>
+          <div class="">
+            <!-- modal-action -->
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button
+                class="btn w-full text-color2 bg-color2.1 border border-color2.2 rounded-lg"
+              >
+                Cancel
+              </button>
+            </form>
+          </div>
+        </div>
+  `;
+}
+// fetch details on modals
+async function fetchDetails(petId){
+  try{
+    const res =await fetch(`https://openapi.programming-hero.com/api/peddy/pet/${petId}`);
+    const data = await res.json();
+    showDetails(data.petData);
+  }
+  catch(error){
+    console.error('Error fetching data:', error);
+  }
 }
 //displayCategoryBtn 
 function displayCategoryBtn(categories) {
@@ -24,9 +127,9 @@ function displayCategoryBtn(categories) {
         <h1 class="font-bold text-24 leading-7">${item.category}</h1>
       </button>   
     `;
+      
   }
 }
-
 // fetchCategoryBtn
 async function loadCategoryBtn() {
   try{
@@ -99,17 +202,17 @@ function displayAllPets(pets){
     <hr />
     <div class="flex justify-between">
       <button
-        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg"
+        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" onclick="showSingleImg('${pet.image}')"
       >
         <img src="./images/like.svg" alt="" />
       </button>
       <button
-        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg"
+        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" 
       >
         Adope
       </button>
       <button
-        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg"
+        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" onclick="fetchDetails('${pet.petId}')"
       >
         Details
       </button>

@@ -1,7 +1,0 @@
-All pets: https://openapi.programming-hero.com/api/peddy/pets
-Single petData: https://openapi.programming-hero.com/api/peddy/pet/1
-categories/buttons: https://openapi.programming-hero.com/api/peddy/categories
-//Single category: https://openapi.programming-hero.com/api/peddy/category/categoryName
-Single category: https://openapi.programming-hero.com/api/peddy/category/dog
-
-<h1 class="font-bold text-24 leading-7">Dogs</h1>

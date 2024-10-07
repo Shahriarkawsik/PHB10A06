@@ -69,7 +69,9 @@
       <section
         id="categoryBtn"
         class="grid justify-center items-center grid-cols-4 gap-6 sm:mt-8 sm:mb-5 lg:mt-12 lg:mb-8"
-      ></section>
+      >
+        <!-- <div id="spinnerContainer"></div> -->
+      </section>
       <!--Deal section  -->
       <section class="flex justify-between items-center my-5 lg:my-7">
         <h2 class="font-black text-24 leading-29 text-color1">
@@ -77,8 +79,12 @@
         </h2>
         <button class="customBtn" onclick="">Sort by Price</button>
       </section>
+      <!-- <button class="" onclick=""></button> -->
       <!-- showcase pets -->
-      <section class="showcase grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <section
+        id="petsCardsContainer"
+        class="showcase grid grid-cols-1 lg:grid-cols-4 gap-6"
+      >
         <!-- pets cards -->
         <div
           id="petsContainer"
@@ -87,8 +93,10 @@
         <!-- pets Image -->
         <div
           id="petsImageContainer"
-          class="lg:col-start-4 bg-color1.1 border border-color1.1 p-5 grid grid-cols-2 gap-6 rounded-xl"
-        ></div>
+          class="lg:col-start-4 bg-color1.1 border border-color1.1 p-5 grid justify-between items-start grid-cols-2 grid-rows-12 gap-6 rounded-xl"
+        >
+          <!-- <img class="rounded-md" src="https://i.ibb.co.com/p0w744T/pet-1.jpg" alt="" /> -->
+        </div>
       </section>
       <!-- No content -->
       <!-- <div
@@ -104,6 +112,13 @@
           using Lorem Ipsum is that it has a.
         </p>
       </div> -->
+      <!-- Modal -->
+      <section id="modalSection">
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+        <dialog id="myModal" class="modal"></dialog>
+
+      </section>
     </main>
     <footer
       class="bg-color1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-between items-center py-100 px-140"
