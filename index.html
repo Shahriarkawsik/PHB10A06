@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
       rel="stylesheet"
     />
     <!-- font -->
@@ -78,15 +78,32 @@
         <button class="customBtn" onclick="">Sort by Price</button>
       </section>
       <!-- showcase pets -->
-      <section class="showcase grid grid-cols-1 lg:grid-cols-4">
+      <section class="showcase grid grid-cols-1 lg:grid-cols-4 gap-6">
         <!-- pets cards -->
         <div
           id="petsContainer"
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 lg:col-start-1 lg:col-span-3 gap-6"
         ></div>
         <!-- pets Image -->
-        <div id="petsImageContainer" class="lg:col-start-4"></div>
+        <div
+          id="petsImageContainer"
+          class="lg:col-start-4 bg-color1.1 border border-color1.1 p-5 grid grid-cols-2 gap-6 rounded-xl"
+        ></div>
       </section>
+      <!-- No content -->
+      <!-- <div
+        class="flex flex-col justify-center items-center text-center bg-color1.03 rounded-3xl p-8 sm:p-12 lg:p-24"
+      >
+        <img src="./images/error.webp" alt="" />
+        <h2 class="text-color1 text-32 font-bold font-Inter leading-10 my-4">
+          No Information Available
+        </h2>
+        <p class="text-color1.7 leading-7">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a.
+        </p>
+      </div> -->
     </main>
     <footer
       class="bg-color1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-between items-center py-100 px-140"

@@ -15,4 +15,10 @@
   .inactiveBtn {
     @apply rounded-2xl border-color2.15;
   }
+  .available {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 lg:col-start-1 lg:col-span-3 gap-6;
+  }
+  .unAvailable {
+    @apply flex flex-col justify-center items-center text-center bg-color1.03 rounded-3xl p-8 sm:p-12 lg:p-24;
+  }
 }

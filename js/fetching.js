@@ -1,10 +1,3 @@
-// displaySingleCategoryPets
-// function displaySingleCategoryPets(pets){
-//   for (const pet of pets) {
-//     console.log(pet);
-    
-//   }
-// }
 // loadSingleCategoryPets
 async function loadSingleCategoryPets(id){
   try{
@@ -22,7 +15,6 @@ async function loadSingleCategoryPets(id){
 function displayCategoryBtn(categories) {
   const categoryBtnSection = document.getElementById("categoryBtn");
   for (const item of categories) {
-    // console.log(item.category);
     const categoryBtnContainer = document.createElement("div");
     categoryBtnSection.appendChild(categoryBtnContainer);
     categoryBtnContainer.classList.add('categoryBtn', 'inactiveBtn');
@@ -35,23 +27,6 @@ function displayCategoryBtn(categories) {
   }
 }
 
-// function displayCategoryBtn(categories){
-//   const categoryBtnSection = document.getElementById("categoryBtn");
-//   for (const item of categories) {
-//     // const btnId = item.category;
-//     console.log(item.category);
-//     const categoryBtnContainer = document.createElement("div");
-//     // const categoryBtn = document.createElement("button");
-//     categoryBtnSection.appendChild(categoryBtnContainer);
-//     categoryBtnContainer.classList.add('categoryBtn','inactiveBtn');
-//     categoryBtnContainer.innerHTML = `
-//       <button class = "flex justify-center items-center gap-4" onclick="loadSingleCategoryPets(${item.category})">
-//       <img src="${item.category_icon}" alt="" />
-//       <h1 class="font-bold text-24 leading-7">${item.category}</h1>
-//       </button>   
-//     `;
-//   }
-// };
 // fetchCategoryBtn
 async function loadCategoryBtn() {
   try{
@@ -68,6 +43,25 @@ loadCategoryBtn();
 function displayAllPets(pets){
   const petsContainer = document.getElementById("petsContainer");
   petsContainer.innerHTML = "";
+  if(pets.length == 0){
+    petsContainer.classList.remove("grid", "grid-cols-1", "md:grid-cols-2", "lg:grid-cols-2", "2xl:grid-cols-3", "gap-6");
+    petsContainer.classList.add('flex', 'flex-col', 'justify-center', 'items-center', 'text-center', 'bg-color1.03', 'rounded-3xl', 'p-8', 'sm:p-12', 'lg:p-24');
+    // petsContainer.innerHTML = "No content";
+    petsContainer.innerHTML = `
+        <img src="./images/error.webp" alt="" />
+        <h2 class="text-color1 text-32 font-bold font-Inter leading-10 my-4">
+          No Information Available
+        </h2>
+        <p class="text-color1.7 leading-7">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a.
+        </p>      
+    `;    
+    return;
+  }
+  petsContainer.classList.add("grid", "grid-cols-1", "md:grid-cols-2", "lg:grid-cols-2", "2xl:grid-cols-3", "gap-6");
+    petsContainer.classList.remove('flex', 'flex-col', 'justify-center', 'items-center', 'text-center', 'bg-color1.03', 'rounded-3xl', 'p-8', 'sm:p-12', 'lg:p-24');
   for (const pet of pets) {
     // console.log(pet);
     const petCard = document.createElement("div");
