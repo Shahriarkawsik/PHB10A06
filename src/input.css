@@ -6,4 +6,13 @@
   .customBtn {
     @apply bg-color2 text-white px-8 py-4 font-bold text-xl rounded-xl;
   }
+  .categoryBtn {
+    @apply flex justify-center items-center gap-4 p-6 border border-solid;
+  }
+  .activeBtn {
+    @apply rounded-120 bg-color2.1 border-color2.1;
+  }
+  .inactiveBtn {
+    @apply rounded-2xl border-color2.15;
+  }
 }

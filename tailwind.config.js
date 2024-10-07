@@ -16,6 +16,7 @@ module.exports = {
         'color3': 'rgb(255, 255, 255)',
         'color1.7': 'rgba(19, 19, 19, 0.7)',
         'color1.6': 'rgba(19, 19, 19, 0.6)',
+        'color1.1': 'rgba(19, 19, 19, 0.1)',
         'color2.2': 'rgba(14, 122, 129, 0.2)',
         'color2.15': 'rgba(14, 122, 129, 0.15)',
         'color2.1': 'rgba(14, 122, 129, 0.1)',
@@ -23,15 +24,16 @@ module.exports = {
         'color3.6': 'rgba(255, 255, 255, 0.6)',
         'color3.05': 'rgba(255, 255, 255, 0.05)',
       },
+      fontFamily:{
+        'Lato': "Lato"
+      },
       fontSize:{
         '24':'24px',
         '32': '32px',
         '40':'40px'        
       },
-      fontFamily:{
-        'Lato': "Lato"
-      },
       lineHeight:{
+        '29': '29px',
         '32': '32px',
         '48': '48px',
         '88':  '88px'
