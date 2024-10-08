@@ -101,7 +101,7 @@ function showDetails(petDetails){
             <form method="dialog">
               <!-- if there is a button in form, it will close the modal -->
               <button
-                class="btn w-full text-color2 bg-color2.1 border border-color2.2 rounded-lg"
+                class="btn text-xl w-full text-color2 bg-color2.1 border border-color2.2 rounded-lg"
               >
                 Cancel
               </button>
@@ -175,12 +175,22 @@ loadCategoryBtn();
 
 // display all pets
 function displayAllPets(pets){
+// loading spin start
+  const petsCardsContainer = document.getElementById("petsCardsContainer");
+  const loadingSpin = document.getElementById("loadingSpin");
+  petsCardsContainer.classList.add("hidden");
+  loadingSpin.classList.remove("hidden");
+  setTimeout(() => {
+    petsCardsContainer.classList.remove("hidden");
+    loadingSpin.classList.add("hidden");
+  },2000)
+// loading spin end
+
   const petsContainer = document.getElementById("petsContainer");
   petsContainer.innerHTML = "";
   if(pets.length == 0){
     petsContainer.classList.remove("grid", "grid-cols-1", "md:grid-cols-2", "lg:grid-cols-2", "2xl:grid-cols-3", "gap-6");
     petsContainer.classList.add('flex', 'flex-col', 'justify-center', 'items-center', 'text-center', 'bg-color1.03', 'rounded-3xl', 'p-8', 'sm:p-12', 'lg:p-24');
-    // petsContainer.innerHTML = "No content";
     petsContainer.innerHTML = `
         <img src="./images/error.webp" alt="" />
         <h2 class="text-color1 text-32 font-bold font-Inter leading-10 my-4">
