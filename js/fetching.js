@@ -1,14 +1,21 @@
 // loadSingleCategoryPets
-async function loadSingleCategoryPets(id){
-
-  try{
-    const res =await fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`);
-    const {data} = await res.json();
-    displayAllPets(data);
-  }
-  catch(error){
-    console.error('Error fetching data:', error);
-  }
+function loadSingleCategoryPets(categoryName,btnId){
+  fetch(`https://openapi.programming-hero.com/api/peddy/category/${categoryName}`)
+  .then(res => res.json())
+  .then((data)=>{
+    // removeInactiveClass();
+    // const activeBtn = document.getElementById(`${btnId}`);
+    // activeBtn.classList.add('rounded-full', 'bg-color2.1', 'border-color2.1');
+    displayAllPets(data.data);
+  });
+}
+function removeInactiveClass(){
+  const activeBtn = document.getElementsByClassName("inactiveBtn");
+  for (const btn of activeBtn) {
+    console.log(btn);
+    btn.classList.remove('inactiveBtn'); 
+    // activeBtn.classList.remove('rounded-full', 'bg-color2.1', 'border-color2.1');    
+  }  
 }
 // display single img on right div
 function showSingleImg(imgLink){
@@ -94,7 +101,7 @@ function showDetails(petDetails){
             <form method="dialog">
               <!-- if there is a button in form, it will close the modal -->
               <button
-                class="btn w-full text-color2 bg-color2.1 border border-color2.2 rounded-lg"
+                class="btn text-xl w-full text-color2 bg-color2.1 border border-color2.2 rounded-lg"
               >
                 Cancel
               </button>
@@ -102,6 +109,27 @@ function showDetails(petDetails){
           </div>
         </div>
   `;
+}
+// show adope modal
+function showAdopeModal(petId){
+  const adopeModal = document.getElementById("adopeModal");
+  adopeModal.showModal()
+  const adopeBtn = document.getElementById(petId);
+  const countdown = document.getElementById("countdown");
+
+  let countdownValue = 3; 
+  // Show the modal
+  countdown.textContent = countdownValue;
+  const countdownInterval = setInterval(() => {
+    countdownValue--;
+    countdown.textContent = countdownValue; 
+    if (countdownValue === 1) {
+      clearInterval(countdownInterval);
+      adopeModal.close();
+      adopeBtn.disabled = true;
+      adopeBtn.classList.add('bg-color2.15','text-color2.1');
+    }
+  }, 1000); // Run every 1 second
 }
 // fetch details on modals
 async function fetchDetails(petId){
@@ -117,12 +145,15 @@ async function fetchDetails(petId){
 //displayCategoryBtn 
 function displayCategoryBtn(categories) {
   const categoryBtnSection = document.getElementById("categoryBtn");
+
   for (const item of categories) {
     const categoryBtnContainer = document.createElement("div");
+    categoryBtnContainer.setAttribute('id', `btn-${item.id}`);
+    // removeInactiveClass(`btn-${item.id}`);
     categoryBtnSection.appendChild(categoryBtnContainer);
     categoryBtnContainer.classList.add('categoryBtn', 'inactiveBtn');
     categoryBtnContainer.innerHTML = `
-      <button class="flex justify-center items-center gap-4" onclick="loadSingleCategoryPets('${item.category}')">
+      <button class="flex justify-center items-center gap-4" onclick="loadSingleCategoryPets('${item.category}','btn-${item.id}')">
         <img src="${item.category_icon}" alt="" />
         <h1 class="font-bold text-24 leading-7">${item.category}</h1>
       </button>   
@@ -144,12 +175,22 @@ loadCategoryBtn();
 
 // display all pets
 function displayAllPets(pets){
+// loading spin start
+  const petsCardsContainer = document.getElementById("petsCardsContainer");
+  const loadingSpin = document.getElementById("loadingSpin");
+  petsCardsContainer.classList.add("hidden");
+  loadingSpin.classList.remove("hidden");
+  setTimeout(() => {
+    petsCardsContainer.classList.remove("hidden");
+    loadingSpin.classList.add("hidden");
+  },2000)
+// loading spin end
+
   const petsContainer = document.getElementById("petsContainer");
   petsContainer.innerHTML = "";
   if(pets.length == 0){
     petsContainer.classList.remove("grid", "grid-cols-1", "md:grid-cols-2", "lg:grid-cols-2", "2xl:grid-cols-3", "gap-6");
     petsContainer.classList.add('flex', 'flex-col', 'justify-center', 'items-center', 'text-center', 'bg-color1.03', 'rounded-3xl', 'p-8', 'sm:p-12', 'lg:p-24');
-    // petsContainer.innerHTML = "No content";
     petsContainer.innerHTML = `
         <img src="./images/error.webp" alt="" />
         <h2 class="text-color1 text-32 font-bold font-Inter leading-10 my-4">
@@ -206,8 +247,8 @@ function displayAllPets(pets){
       >
         <img src="./images/like.svg" alt="" />
       </button>
-      <button
-        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" 
+      <button id="adopeBtn-${pet.petId}"
+        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" onclick="showAdopeModal('adopeBtn-${pet.petId}')" 
       >
         Adope
       </button>
