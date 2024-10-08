@@ -1282,10 +1282,6 @@ html {
           mask-image: url("data:image/svg+xml,%0A%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cstyle%3E.spinner_hzlK%7Banimation:spinner_vc4H .8s linear infinite;animation-delay:-.8s%7D.spinner_koGT%7Banimation-delay:-.65s%7D.spinner_YF1u%7Banimation-delay:-.5s%7D@keyframes spinner_vc4H%7B0%25%7By:1px;height:22px%7D93.75%25%7By:5px;height:14px;opacity:.2%7D%7D%3C/style%3E%3Crect class='spinner_hzlK' x='1' y='1' width='6' height='22'/%3E%3Crect class='spinner_hzlK spinner_koGT' x='9' y='1' width='6' height='22'/%3E%3Crect class='spinner_hzlK spinner_YF1u' x='17' y='1' width='6' height='22'/%3E%3C/svg%3E");
 }
 
-.loading-md {
-  width: 1.5rem;
-}
-
 .loading-lg {
   width: 2.5rem;
 }
@@ -1539,10 +1535,6 @@ html {
   }
 }
 
-.fixed {
-  position: fixed;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1597,6 +1589,10 @@ html {
 
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .w-4\/5 {
@@ -1760,25 +1756,21 @@ html {
   background-color: rgba(14, 122, 129, 0.1);
 }
 
-.bg-color3\.05 {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.bg-color2\.2 {
-  background-color: rgba(14, 122, 129, 0.2);
-}
-
-.bg-color3\.9 {
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
 .bg-color2\.15 {
   background-color: rgba(14, 122, 129, 0.15);
+}
+
+.bg-color3\.05 {
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .p-3 {
@@ -1795,10 +1787,6 @@ html {
 
 .p-8 {
   padding: 2rem;
-}
-
-.p-10 {
-  padding: 2.5rem;
 }
 
 .px-140 {
@@ -1819,11 +1807,6 @@ html {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .text-center {
@@ -1864,14 +1847,14 @@ html {
   font-size: 40px;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .text-lg {
@@ -1879,9 +1862,9 @@ html {
   line-height: 1.75rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-black {
@@ -1954,6 +1937,10 @@ html {
   color: rgb(14 122 129 / var(--tw-text-opacity));
 }
 
+.text-color2\.1 {
+  color: rgba(14, 122, 129, 0.1);
+}
+
 .text-color3 {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1965,10 +1952,6 @@ html {
 
 .text-color3\.9 {
   color: rgba(255, 255, 255, 0.9);
-}
-
-.text-color2\.1 {
-  color: rgba(14, 122, 129, 0.1);
 }
 
 @media (min-width: 640px) {

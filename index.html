@@ -26,7 +26,7 @@
       <nav class="flex justify-between items-center">
         <div class="flex items-center gap-3">
           <img src="./images/logo.webp" alt="" />
-          <h2 class="text-color1 text-3xl font-extrabold">Peddy</h2>
+          <h2 class="text-color1 text-3xl font-extrabold">Paddy</h2>
         </div>
         <ul class="flex justify-center items-center gap-8 text-color1">
           <li>Home</li>
@@ -81,10 +81,12 @@
         <button class="customBtn" onclick="">Sort by Price</button>
       </section>
       <!-- Loading spin -->
-      <p
+      <div
         id="loadingSpin"
-        class="loading loading-bars loading-lg  hidden "
-      ></p>
+        class="hidden flex justify-center h-screen items-start"
+      >
+        <p class="loading loading-bars loading-lg"></p>
+      </div>
       <!-- showcase pets -->
       <section
         id="petsCardsContainer"
@@ -103,8 +105,6 @@
       </section>
       <!-- Modal -->
       <section id="modalSection">
-        <!-- Open the modal using ID.showModal() method -->
-        <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
         <dialog id="myModal" class="modal"></dialog>
       </section>
       <!-- Adopt section -->
@@ -130,7 +130,7 @@
       <div class="text-color3 space-y-8">
         <div class="flex items-center gap-3">
           <img src="./images/logo.webp" alt="" />
-          <h2 class="text-color3 text-32 font-extrabold">Peddy</h2>
+          <h2 class="text-color3 text-32 font-extrabold">Paddy</h2>
         </div>
         <div class="space-y-4">
           <p class="leading-32">Phone: +31 85 964 47 25</p>
@@ -223,8 +223,6 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <desc>Created with Pixso.</desc>
-            <defs />
             <path
               id="Vector"
               d="M44.76 4.99C44.23 3.03 42.69 1.48 40.71 0.95C37.15 0 22.85 0 22.85 0C22.85 0 8.56 0 4.99 0.95C3.03 1.47 1.48 3.02 0.95 4.99C0 8.56 0 16 0 16C0 16 0 23.43 0.95 27C1.47 28.96 3.02 30.51 4.99 31.04C8.56 32 22.85 32 22.85 32C22.85 32 37.15 32 40.71 31.04C42.68 30.52 44.23 28.97 44.76 27C45.71 23.43 45.71 16 45.71 16C45.71 16 45.71 8.56 44.76 4.99Z"
@@ -248,7 +246,6 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <desc>Created with Pixso.</desc>
             <defs>
               <clipPath id="clip12_889">
                 <rect
