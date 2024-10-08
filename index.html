@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pet Adoption</title>
+    <link rel="shortcut icon" href="./images/logo.webp" type="image/x-icon" />
     <link rel="stylesheet" href="./src/output.css" />
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +21,7 @@
     ></script>
     <!-- font awesome -->
   </head>
-  <body class="font-Lato">
+  <body class="font-Lato scroll-smooth">
     <header class="w-4/5 mx-auto mt-14">
       <nav class="flex justify-between items-center">
         <div class="flex items-center gap-3">
@@ -50,11 +51,11 @@
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a.
         </p>
-        <button class="customBtn" onclick="">View More</button>
+        <button class="customBtn"><a href="#main">View More</a></button>
         <img class="mx-auto" src="./images/pet.webp" alt="" />
       </section>
     </header>
-    <main class="w-4/5 mx-auto mt-24 mb-8">
+    <main id="main" class="w-4/5 mx-auto mt-24 mb-8">
       <section class="space-y-6">
         <h1 class="font-extrabold text-40 text-color1 leading-48 text-center">
           Adopt Your Best Friend
@@ -93,31 +94,29 @@
         <!-- pets Image -->
         <div
           id="petsImageContainer"
-          class="lg:col-start-4 bg-color1.1 border border-color1.1 p-5 grid justify-between items-start grid-cols-2 grid-rows-12 gap-6 rounded-xl"
-        >
-          <!-- <img class="rounded-md" src="https://i.ibb.co.com/p0w744T/pet-1.jpg" alt="" /> -->
-        </div>
+          class="lg:col-start-4 bg-color1.1 border border-color1.1 p-5 grid justify-between items-start grid-cols-2 lg:grid-rows-6 gap-6 rounded-xl"
+        ></div>
       </section>
-      <!-- No content -->
-      <!-- <div
-        class="flex flex-col justify-center items-center text-center bg-color1.03 rounded-3xl p-8 sm:p-12 lg:p-24"
-      >
-        <img src="./images/error.webp" alt="" />
-        <h2 class="text-color1 text-32 font-bold font-Inter leading-10 my-4">
-          No Information Available
-        </h2>
-        <p class="text-color1.7 leading-7">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a.
-        </p>
-      </div> -->
       <!-- Modal -->
       <section id="modalSection">
         <!-- Open the modal using ID.showModal() method -->
         <!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
         <dialog id="myModal" class="modal"></dialog>
-
+      </section>
+      <!-- Adopt section -->
+      <section>
+        <dialog id="adopeModal" class="modal">
+          <div
+            class="modal-box p-10 flex flex-col justify-center items-center gap-3"
+          >
+            <img src="./images/handshake.png" alt="" />
+            <h3 class="font-black text-4xl text-color1">Congrats</h3>
+            <p class="font-bold text-lg text-color1.6">
+              Adoption process is start for your process
+            </p>
+            <h2 id="countdown" class="font-black text-4xl text-color2">3</h2>
+          </div>
+        </dialog>
       </section>
     </main>
     <footer
@@ -144,7 +143,6 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <desc>Created with Pixso.</desc>
             <defs>
               <linearGradient
                 x1="16.000000"
@@ -181,7 +179,6 @@
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
           >
-            <desc>Created with Pixso.</desc>
             <defs>
               <clipPath id="clip12_871">
                 <rect

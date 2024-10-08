@@ -1,14 +1,21 @@
 // loadSingleCategoryPets
-async function loadSingleCategoryPets(id){
-
-  try{
-    const res =await fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`);
-    const {data} = await res.json();
-    displayAllPets(data);
-  }
-  catch(error){
-    console.error('Error fetching data:', error);
-  }
+function loadSingleCategoryPets(categoryName,btnId){
+  fetch(`https://openapi.programming-hero.com/api/peddy/category/${categoryName}`)
+  .then(res => res.json())
+  .then((data)=>{
+    // removeInactiveClass();
+    // const activeBtn = document.getElementById(`${btnId}`);
+    // activeBtn.classList.add('rounded-full', 'bg-color2.1', 'border-color2.1');
+    displayAllPets(data.data);
+  });
+}
+function removeInactiveClass(){
+  const activeBtn = document.getElementsByClassName("inactiveBtn");
+  for (const btn of activeBtn) {
+    console.log(btn);
+    btn.classList.remove('inactiveBtn'); 
+    // activeBtn.classList.remove('rounded-full', 'bg-color2.1', 'border-color2.1');    
+  }  
 }
 // display single img on right div
 function showSingleImg(imgLink){
@@ -103,6 +110,24 @@ function showDetails(petDetails){
         </div>
   `;
 }
+// show adope modal
+function showAdopeModal(){
+  const adopeModal = document.getElementById("adopeModal");
+  adopeModal.showModal()
+  const countdown = document.getElementById("countdown");
+
+  let countdownValue = 3; 
+  // Show the modal
+  countdown.textContent = countdownValue;
+  const countdownInterval = setInterval(() => {
+    countdownValue--;
+    countdown.textContent = countdownValue; 
+    if (countdownValue === 1) {
+      clearInterval(countdownInterval);
+      adopeModal.close()
+    }
+  }, 1000); // Run every 1 second
+}
 // fetch details on modals
 async function fetchDetails(petId){
   try{
@@ -117,12 +142,15 @@ async function fetchDetails(petId){
 //displayCategoryBtn 
 function displayCategoryBtn(categories) {
   const categoryBtnSection = document.getElementById("categoryBtn");
+
   for (const item of categories) {
     const categoryBtnContainer = document.createElement("div");
+    categoryBtnContainer.setAttribute('id', `btn-${item.id}`);
+    // removeInactiveClass(`btn-${item.id}`);
     categoryBtnSection.appendChild(categoryBtnContainer);
     categoryBtnContainer.classList.add('categoryBtn', 'inactiveBtn');
     categoryBtnContainer.innerHTML = `
-      <button class="flex justify-center items-center gap-4" onclick="loadSingleCategoryPets('${item.category}')">
+      <button class="flex justify-center items-center gap-4" onclick="loadSingleCategoryPets('${item.category}','btn-${item.id}')">
         <img src="${item.category_icon}" alt="" />
         <h1 class="font-bold text-24 leading-7">${item.category}</h1>
       </button>   
@@ -207,7 +235,7 @@ function displayAllPets(pets){
         <img src="./images/like.svg" alt="" />
       </button>
       <button
-        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" 
+        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" onclick="showAdopeModal()" 
       >
         Adope
       </button>
