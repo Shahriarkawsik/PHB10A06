@@ -846,6 +846,16 @@ html {
 }
 
 @media (hover: hover) {
+  .btm-nav > *.disabled:hover,
+      .btm-nav > *[disabled]:hover {
+    pointer-events: none;
+    --tw-border-opacity: 0;
+    background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)));
+    --tw-bg-opacity: 0.1;
+    color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+    --tw-text-opacity: 0.2;
+  }
+
   .btn:hover {
     --tw-border-opacity: 1;
     border-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-border-opacity)));
@@ -954,6 +964,14 @@ html {
 .link {
   cursor: pointer;
   text-decoration-line: underline;
+}
+
+.menu li.disabled {
+  cursor: not-allowed;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: var(--fallback-bc,oklch(var(--bc)/0.3));
 }
 
 .modal {
@@ -1070,6 +1088,16 @@ html {
 .swap-active .swap-on,
 .swap input:indeterminate ~ .swap-indeterminate {
   opacity: 1;
+}
+
+.btm-nav > *.disabled,
+    .btm-nav > *[disabled] {
+  pointer-events: none;
+  --tw-border-opacity: 0;
+  background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)));
+  --tw-bg-opacity: 0.1;
+  color: var(--fallback-bc,oklch(var(--bc)/var(--tw-text-opacity)));
+  --tw-text-opacity: 0.2;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -1703,6 +1731,18 @@ html {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
+.bg-color2\.2 {
+  background-color: rgba(14, 122, 129, 0.2);
+}
+
+.bg-color3\.9 {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.bg-color2\.15 {
+  background-color: rgba(14, 122, 129, 0.15);
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1892,6 +1932,10 @@ html {
 
 .text-color3\.9 {
   color: rgba(255, 255, 255, 0.9);
+}
+
+.text-color2\.1 {
+  color: rgba(14, 122, 129, 0.1);
 }
 
 @media (min-width: 640px) {

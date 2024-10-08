@@ -111,9 +111,10 @@ function showDetails(petDetails){
   `;
 }
 // show adope modal
-function showAdopeModal(){
+function showAdopeModal(petId){
   const adopeModal = document.getElementById("adopeModal");
   adopeModal.showModal()
+  const adopeBtn = document.getElementById(petId);
   const countdown = document.getElementById("countdown");
 
   let countdownValue = 3; 
@@ -124,7 +125,9 @@ function showAdopeModal(){
     countdown.textContent = countdownValue; 
     if (countdownValue === 1) {
       clearInterval(countdownInterval);
-      adopeModal.close()
+      adopeModal.close();
+      adopeBtn.disabled = true;
+      adopeBtn.classList.add('bg-color2.15','text-color2.1');
     }
   }, 1000); // Run every 1 second
 }
@@ -234,8 +237,8 @@ function displayAllPets(pets){
       >
         <img src="./images/like.svg" alt="" />
       </button>
-      <button
-        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" onclick="showAdopeModal()" 
+      <button id="adopeBtn-${pet.petId}"
+        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" onclick="showAdopeModal('adopeBtn-${pet.petId}')" 
       >
         Adope
       </button>
