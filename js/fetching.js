@@ -113,7 +113,7 @@ function showDetails(petDetails){
         </div>
   `;
 }
-// show adope modal
+// show adobe modal
 function showAdopeModal(petId){
   const adopeModal = document.getElementById("adopeModal");
   adopeModal.showModal()
