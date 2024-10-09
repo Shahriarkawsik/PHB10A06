@@ -31,7 +31,7 @@
           </h2>
         </div>
         <ul
-          class="flex justify-center items-center gap-8 text-color1 text-xl xl:text-base sm:text-2xl lg:text-3xl font-bold"
+          class="max-sm:hidden flex justify-center items-center gap-8 text-color1 text-xl xl:text-base sm:text-2xl lg:text-3xl font-bold"
         >
           <li>Home</li>
           <li>Shop</li>
@@ -141,10 +141,12 @@
       <div class="text-color3 space-y-8">
         <div class="flex items-center gap-5">
           <img class="w-12" src="./images/logo.webp" alt="" />
-          <h2 class="text-color3 text-40 font-extrabold">Paddy</h2>
+          <h2 class="text-color3 max-sm:text-32 text-40 font-extrabold">
+            Paddy
+          </h2>
         </div>
         <div
-          class="space-y-4 text-xl sm:text-2xl lg:text-xl xl:text-base text-color3.6"
+          class="space-y-4 text-base sm:text-2xl lg:text-xl xl:text-base text-color3.6"
         >
           <p class="leading-32">Phone: +31 85 964 47 25</p>
           <p class="leading-32">Location: av. Washington 165, NY CA 54003</p>
@@ -328,10 +330,12 @@
       </div>
       <!-- second -->
       <div class="text-color3 space-y-8">
-        <h3 class="text-32 xl:text-24 leading-6 font-bold text-color3.9">
+        <h3
+          class="max-sm:text-xl text-32 xl:text-24 leading-6 font-bold text-color3.9"
+        >
           Useful Links
         </h3>
-        <ul class="space-y-4 text-2xl xl:text-xl">
+        <ul class="space-y-4 max-sm:text-base text-2xl xl:text-xl">
           <li class="text-color3.6 leading-8">Home</li>
           <li class="text-color3.6 leading-8">About Us</li>
           <li class="text-color3.6 leading-8">Animals</li>
@@ -341,17 +345,19 @@
       </div>
       <!-- third -->
       <div class="space-y-4 sm:space-y-6 lg:space-y-8 w-full">
-        <h3 class="text-color3 text-32 xl:text-24">Drop a Message</h3>
+        <h3 class="text-color3 max-sm:text-xl sm:text-32 xl:text-24">
+          Drop a Message
+        </h3>
         <form class="space-y-6 lg:space-y-4">
           <input
-            class="text-3xl xl:text-xl bg-color3.05 p-4 text-color3.6 rounded-xl w-full lg:w-full"
+            class="max-sm:text-xl text-3xl xl:text-xl bg-color3.05 p-4 text-color3.6 rounded-xl w-full lg:w-full"
             type="text"
             name=""
             id=""
             placeholder="Enter your email"
           />
           <input
-            class="text-3xl xl:text-xl customBtn w-2/3 md:w-full lg:w-full"
+            class="max-sm:text-xl sm:text-3xl xl:text-xl customBtn w-full md:w-full lg:w-full"
             type="submit"
             value="Subscribe"
           />

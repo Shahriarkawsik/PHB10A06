@@ -1626,6 +1626,10 @@ html {
   width: 100%;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1972,8 +1976,30 @@ html {
 }
 
 @media not all and (min-width: 640px) {
+  .max-sm\:m-32 {
+    margin: 8rem;
+  }
+
+  .max-sm\:hidden {
+    display: none;
+  }
+
   .max-sm\:text-justify {
     text-align: justify;
+  }
+
+  .max-sm\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .max-sm\:text-32 {
+    font-size: 32px;
+  }
+
+  .max-sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 
@@ -1992,6 +2018,10 @@ html {
     padding: 3rem;
   }
 
+  .sm\:text-24 {
+    font-size: 24px;
+  }
+
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -2001,8 +2031,9 @@ html {
     font-size: 32px;
   }
 
-  .sm\:text-24 {
-    font-size: 24px;
+  .sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 

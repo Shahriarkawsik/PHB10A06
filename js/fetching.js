@@ -220,10 +220,10 @@ function displayAllPets(pets){
       alt=""
     />
     <div class="space-y-4">
-      <h2 class="font-bold text-3xl leading-6 text-color1">
+      <h2 class="font-bold text-2xl leading-6 text-color1">
       ${pet.pet_name}
       </h2>
-      <div class="space-y-4 text-color1.7 leading-5 text-2xl md:text-xl xl:text-base font-medium">
+      <div class="space-y-4 text-color1.7 leading-5 text-xl md:text-xl xl:text-base font-medium">
         <div class="flex items-center gap-3">
           <img src="./images/breed.svg" alt="" /> 
           <p>Breed: ${(typeof pet.breed === "string") ? pet.breed : "Not available"}</p>
@@ -247,15 +247,15 @@ function displayAllPets(pets){
       <button
         class="text-color2 font-bold px-5 md:px-3 lg:px-5 xl:px-2 py-2 border border-color2.15 rounded-lg" onclick="showSingleImg('${pet.image}')"
       >
-        <img class="w-10 md:w-6 xl:w-5" src="./images/like.svg" alt="" />
+        <img class="w-6 md:w-6 xl:w-5" src="./images/like.svg" alt="" />
       </button>
       <button id="adopeBtn-${pet.petId}"
-        class="text-color2 font-bold text-2xl xl:text-base px-5 md:px-3 lg:px-5 xl:px-3 py-2 border border-color2.15 rounded-lg" onclick="showAdopeModal('adopeBtn-${pet.petId}')" 
+        class="text-color2 font-bold max-sm:text-xl text-2xl xl:text-base px-5 md:px-3 lg:px-5 xl:px-3 py-2 border border-color2.15 rounded-lg" onclick="showAdopeModal('adopeBtn-${pet.petId}')" 
       >
         Adope
       </button>
       <button
-        class="text-color2 font-bold text-2xl xl:text-base px-5 md:px-3 lg:px-5 xl:px-3 py-2 border border-color2.15 rounded-lg" onclick="fetchDetails('${pet.petId}')"
+        class="text-color2 font-bold max-sm:text-xl text-2xl xl:text-base px-5 md:px-3 lg:px-5 xl:px-3 py-2 border border-color2.15 rounded-lg" onclick="fetchDetails('${pet.petId}')"
       >
         Details
       </button>
