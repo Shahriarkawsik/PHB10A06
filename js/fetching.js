@@ -260,7 +260,15 @@ function displayAllPets(pets){
     </div>
     `;    
   }
+  sortingByPrice(pets);
 }
+// sorting pets according to price
+function sortingByPrice(pets){
+  document.getElementById("sortBtn").addEventListener("click",()=>{
+    pets.sort((min,max) => max.price - min.price)
+    displayAllPets(pets);
+  });
+};
 // Fetch All Pets
 async function loadAllPets() {
   try{
