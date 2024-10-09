@@ -3,19 +3,22 @@ function loadSingleCategoryPets(categoryName,btnId){
   fetch(`https://openapi.programming-hero.com/api/peddy/category/${categoryName}`)
   .then(res => res.json())
   .then((data)=>{
-    // removeInactiveClass();
-    // const activeBtn = document.getElementById(`${btnId}`);
-    // activeBtn.classList.add('rounded-full', 'bg-color2.1', 'border-color2.1');
+    addInactiveClass();
+    addActiveClass(btnId);
     displayAllPets(data.data);
   });
 }
-function removeInactiveClass(){
-  const activeBtn = document.getElementsByClassName("inactiveBtn");
-  for (const btn of activeBtn) {
-    console.log(btn);
-    btn.classList.remove('inactiveBtn'); 
-    // activeBtn.classList.remove('rounded-full', 'bg-color2.1', 'border-color2.1');    
-  }  
+function addInactiveClass(){
+  const inActiveBtnId = document.getElementsByClassName("activeBtn");
+  for (const element of inActiveBtnId) {
+    element.classList.remove('activeBtn');
+    element.classList.add('inactiveBtn');
+  }
+}
+function addActiveClass(btnId){
+  const activeBtnId = document.getElementById(btnId);
+  activeBtnId.classList.add('activeBtn');
+  activeBtnId.classList.remove('inactiveBtn');
 }
 // display single img on right div
 function showSingleImg(imgLink){
@@ -153,9 +156,9 @@ function displayCategoryBtn(categories) {
     categoryBtnSection.appendChild(categoryBtnContainer);
     categoryBtnContainer.classList.add('categoryBtn', 'inactiveBtn');
     categoryBtnContainer.innerHTML = `
-      <button class="flex justify-center items-center gap-4" onclick="loadSingleCategoryPets('${item.category}','btn-${item.id}')">
+      <button class="flex justify-center items-center gap-4 md:gap-2 lg:gap-4" onclick="loadSingleCategoryPets('${item.category}','btn-${item.id}')">
         <img src="${item.category_icon}" alt="" />
-        <h1 class="font-bold text-24 leading-7">${item.category}</h1>
+        <h1 class="font-bold text-24 sm:text-32 md:text-24 leading-7">${item.category}</h1>
       </button>   
     `;
       
@@ -185,7 +188,6 @@ function displayAllPets(pets){
     loadingSpin.classList.add("hidden");
   },2000)
 // loading spin end
-
   const petsContainer = document.getElementById("petsContainer");
   petsContainer.innerHTML = "";
   if(pets.length == 0){
@@ -210,20 +212,20 @@ function displayAllPets(pets){
     // console.log(pet);
     const petCard = document.createElement("div");
     petsContainer.appendChild(petCard);
-    petCard.classList.add('p-5', 'border', 'border-color1.1', 'rounded-xl', 'space-y-3');
+    petCard.classList.add('p-5','xl:p-3', 'border', 'border-color1.1', 'rounded-xl', 'space-y-4');
     petCard.innerHTML = `
     <img
       class="rounded-lg mb-6 w-full"
       src="${pet.image}"
       alt=""
     />
-    <div class="space-y-2">
-      <h2 class="font-bold text-xl leading-6 text-color1">
+    <div class="space-y-4">
+      <h2 class="font-bold text-3xl leading-6 text-color1">
       ${pet.pet_name}
       </h2>
-      <div class="space-y-2 text-color1.7 leading-5">
+      <div class="space-y-4 text-color1.7 leading-5 text-2xl md:text-xl xl:text-base font-medium">
         <div class="flex items-center gap-3">
-          <img src="./images/breed.svg" alt="" />
+          <img src="./images/breed.svg" alt="" /> 
           <p>Breed: ${(typeof pet.breed === "string") ? pet.breed : "Not available"}</p>
         </div>
         <div class="flex items-center gap-3">
@@ -243,17 +245,17 @@ function displayAllPets(pets){
     <hr />
     <div class="flex justify-between">
       <button
-        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" onclick="showSingleImg('${pet.image}')"
+        class="text-color2 font-bold px-5 md:px-3 lg:px-5 xl:px-2 py-2 border border-color2.15 rounded-lg" onclick="showSingleImg('${pet.image}')"
       >
-        <img src="./images/like.svg" alt="" />
+        <img class="w-10 md:w-6 xl:w-5" src="./images/like.svg" alt="" />
       </button>
       <button id="adopeBtn-${pet.petId}"
-        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" onclick="showAdopeModal('adopeBtn-${pet.petId}')" 
+        class="text-color2 font-bold text-2xl xl:text-base px-5 md:px-3 lg:px-5 xl:px-3 py-2 border border-color2.15 rounded-lg" onclick="showAdopeModal('adopeBtn-${pet.petId}')" 
       >
         Adope
       </button>
       <button
-        class="text-color2 font-bold text-xl px-5 py-2 border border-color2.15 rounded-lg" onclick="fetchDetails('${pet.petId}')"
+        class="text-color2 font-bold text-2xl xl:text-base px-5 md:px-3 lg:px-5 xl:px-3 py-2 border border-color2.15 rounded-lg" onclick="fetchDetails('${pet.petId}')"
       >
         Details
       </button>

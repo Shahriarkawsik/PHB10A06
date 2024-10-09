@@ -22,20 +22,24 @@
     <!-- font awesome -->
   </head>
   <body class="font-Lato scroll-smooth">
-    <header class="w-4/5 mx-auto mt-14">
+    <header class="w-10/12 xl:w-4/5 mx-auto mt-14">
       <nav class="flex justify-between items-center">
         <div class="flex items-center gap-3">
-          <img src="./images/logo.webp" alt="" />
-          <h2 class="text-color1 text-3xl font-extrabold">Paddy</h2>
+          <img class="w-10" src="./images/logo.webp" alt="" />
+          <h2 class="text-color1 text-32 xl:text-24 lg:text-40 font-extrabold">
+            Paddy
+          </h2>
         </div>
-        <ul class="flex justify-center items-center gap-8 text-color1">
+        <ul
+          class="flex justify-center items-center gap-8 text-color1 text-xl xl:text-base sm:text-2xl lg:text-3xl font-bold"
+        >
           <li>Home</li>
           <li>Shop</li>
           <li>Contact</li>
         </ul>
         <div class="">
           <i
-            class="fa-regular fa-user text-2xl rounded-full p-3 border-2 border-color2.2"
+            class="fa-regular fa-user text-2xl rounded-full p-3 lg:p-4 border-2 border-color2.2 lg:text-32"
           ></i>
         </div>
       </nav>
@@ -43,10 +47,14 @@
         <h2 class="font-bold text-2xl">
           <span class="text-color1.6">Bringing Families Together</span> ❤️‍🔥
         </h2>
-        <h1 class="font-extrabold text-7xl text-color1 leading-88">
+        <h1
+          class="font-extrabold text-3xl md:text-5xl lg:text-7xl text-color1 leading-10 lg:leading-88"
+        >
           Your Path to Adoption <br />Starts Here
         </h1>
-        <p class="leading-7 text-color1">
+        <p
+          class="leading-7 text-color1 text-xl font-medium max-sm:text-justify"
+        >
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a.
@@ -55,12 +63,15 @@
         <img class="mx-auto" src="./images/pet.webp" alt="" />
       </section>
     </header>
-    <main id="main" class="w-4/5 mx-auto mt-24 mb-8">
+    <main id="main" class="w-10/12 xl:w-4/5 mx-auto mt-24 mb-8">
       <section class="space-y-6">
         <h1 class="font-extrabold text-40 text-color1 leading-48 text-center">
           Adopt Your Best Friend
         </h1>
-        <p class="leading-7 text-color1.7 text-center">
+        <!-- leading-7 text-color1 text-xl font-medium text-center -->
+        <p
+          class="leading-7 text-color1.7 text-xl font-medium text-center max-sm:text-justify"
+        >
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a.
@@ -69,13 +80,13 @@
       <!-- buttons Dogs cats rabbits Birds-->
       <section
         id="categoryBtn"
-        class="grid justify-center items-center grid-cols-4 gap-6 sm:mt-8 sm:mb-5 lg:mt-12 lg:mb-8"
+        class="grid justify-center items-center grid-cols-2 md:grid-cols-4 gap-6 mt-8 sm:mb-5 lg:mt-12 lg:mb-8"
       >
         <!-- <div id="spinnerContainer"></div> -->
       </section>
       <!--Deal section  -->
       <section class="flex justify-between items-center my-5 lg:my-7">
-        <h2 class="font-black text-24 leading-29 text-color1">
+        <h2 class="font-black text-xl sm:text-24 leading-29 text-color1">
           Best Deal For you
         </h2>
         <button id="sortBtn" class="customBtn" onclick="">Sort by Price</button>
@@ -90,12 +101,12 @@
       <!-- showcase pets -->
       <section
         id="petsCardsContainer"
-        class="showcase grid grid-cols-1 lg:grid-cols-4 gap-6"
+        class="showcase grid grid-cols-1 lg:grid-cols-4 gap-6 xl:gap-3"
       >
         <!-- pets cards -->
         <div
           id="petsContainer"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-3 lg:col-start-1 lg:col-span-3 gap-6"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 lg:col-start-1 lg:col-span-3 gap-6 xl:gap-3"
         ></div>
         <!-- pets Image -->
         <div
@@ -124,15 +135,17 @@
       </section>
     </main>
     <footer
-      class="bg-color1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-between items-center py-100 px-140"
+      class="bg-color1 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-10 justify-between items-start py-100 px-20 lg:px-20 xl:px-140"
     >
       <!-- first -->
       <div class="text-color3 space-y-8">
-        <div class="flex items-center gap-3">
-          <img src="./images/logo.webp" alt="" />
-          <h2 class="text-color3 text-32 font-extrabold">Paddy</h2>
+        <div class="flex items-center gap-5">
+          <img class="w-12" src="./images/logo.webp" alt="" />
+          <h2 class="text-color3 text-40 font-extrabold">Paddy</h2>
         </div>
-        <div class="space-y-4">
+        <div
+          class="space-y-4 text-xl sm:text-2xl lg:text-xl xl:text-base text-color3.6"
+        >
           <p class="leading-32">Phone: +31 85 964 47 25</p>
           <p class="leading-32">Location: av. Washington 165, NY CA 54003</p>
           <p class="leading-32">Email: info@yourdomain.com</p>
@@ -315,8 +328,10 @@
       </div>
       <!-- second -->
       <div class="text-color3 space-y-8">
-        <h3 class="text-18 leading-6 font-bold text-color3.9">Useful Links</h3>
-        <ul class="space-y-4">
+        <h3 class="text-32 xl:text-24 leading-6 font-bold text-color3.9">
+          Useful Links
+        </h3>
+        <ul class="space-y-4 text-2xl xl:text-xl">
           <li class="text-color3.6 leading-8">Home</li>
           <li class="text-color3.6 leading-8">About Us</li>
           <li class="text-color3.6 leading-8">Animals</li>
@@ -325,17 +340,21 @@
         </ul>
       </div>
       <!-- third -->
-      <div class="space-y-8 w-full">
-        <h3 class="text-color3">Drop a Message</h3>
-        <form class="space-y-4">
+      <div class="space-y-4 sm:space-y-6 lg:space-y-8 w-full">
+        <h3 class="text-color3 text-32 xl:text-24">Drop a Message</h3>
+        <form class="space-y-6 lg:space-y-4">
           <input
-            class="bg-color3.05 p-4 text-color3.6 rounded-xl lg:w-1/2"
+            class="text-3xl xl:text-xl bg-color3.05 p-4 text-color3.6 rounded-xl w-full lg:w-full"
             type="text"
             name=""
             id=""
             placeholder="Enter your email"
           />
-          <input class="customBtn lg:w-1/2" type="submit" value="Subscribe" />
+          <input
+            class="text-3xl xl:text-xl customBtn w-2/3 md:w-full lg:w-full"
+            type="submit"
+            value="Subscribe"
+          />
         </form>
       </div>
     </footer>
