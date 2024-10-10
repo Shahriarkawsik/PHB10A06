@@ -69,7 +69,7 @@ function showDetails(petDetails){
             <div class="space-y-2">
               <div class="flex gap-3">
                 <img src="./images/calender.svg" alt="" />
-                <p>Birth:</p>
+                
                 <p>
                   Birth: ${(typeof petDetails.date_of_birth === "string") ?
                   (petDetails.date_of_birth).slice(0,4) : "Not available"}
@@ -77,7 +77,7 @@ function showDetails(petDetails){
               </div>
               <div class="flex gap-3">
                 <img src="./images/price.svg" alt="" />
-                <p>Price:</p>
+                
                 <p>
                   Price: ${(typeof petDetails.price === "number") ?
                   petDetails.price + "$" : "Not available"}
@@ -90,14 +90,7 @@ function showDetails(petDetails){
             Details Information
           </h2>
           <div class="font-Inter leading-6 text-color1.7 text-justify">
-            <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
-            </p>
-            <li>
-              The point of using is that it has a more-or-less normal
-              distribution of letters, as opposed to using.
-            </li>
+            <p>${petDetails.pet_details}</p>            
           </div>
           <div class="">
             <!-- modal-action -->
