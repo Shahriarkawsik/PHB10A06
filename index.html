@@ -23,26 +23,64 @@
   </head>
   <body class="font-Lato scroll-smooth">
     <header class="w-10/12 xl:w-4/5 mx-auto mt-14">
-      <nav class="flex justify-between items-center">
-        <div class="flex items-center gap-3">
-          <img class="w-10" src="./images/logo.webp" alt="" />
-          <h2 class="text-color1 text-32 xl:text-24 lg:text-40 font-extrabold">
-            Paddy
-          </h2>
+      <!-- Nav start -->
+      <nav class="navbar bg-base-100">
+        <div class="navbar-start">
+          <!-- dropdown -->
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <!-- navbar -->
+          <div class="flex items-center gap-3">
+            <img class="w-10" src="./images/logo.webp" alt="" />
+            <h2
+              class="text-color1 text-2xl sm:text-32 lg:text-40 xl:text-24 font-extrabold"
+            >
+              Paddy
+            </h2>
+          </div>
         </div>
-        <ul
-          class="max-sm:hidden flex justify-center items-center gap-8 text-color1 text-xl xl:text-base sm:text-2xl lg:text-3xl font-bold"
-        >
-          <li>Home</li>
-          <li>Shop</li>
-          <li>Contact</li>
-        </ul>
-        <div class="">
+        <!-- ul list -->
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Home</a></li>
+            <li>
+              <a>Shop</a>
+            </li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+        <!-- user icon -->
+        <div class="navbar-end">
           <i
-            class="fa-regular fa-user text-2xl rounded-full p-3 lg:p-4 border-2 border-color2.2 lg:text-32"
+            class="fa-regular fa-user text-xl lg:text-32 rounded-full p-2 lg:p-4 border border-color2.2"
           ></i>
         </div>
       </nav>
+      <!-- Nav end -->
       <section class="text-center space-y-8 mt-16">
         <h2 class="font-bold text-2xl">
           <span class="text-color1.6">Bringing Families Together</span> ❤️‍🔥
@@ -101,7 +139,7 @@
       <!-- showcase pets -->
       <section
         id="petsCardsContainer"
-        class="showcase grid grid-cols-1 lg:grid-cols-4 gap-6 xl:gap-3 "
+        class="showcase grid grid-cols-1 lg:grid-cols-4 gap-6 xl:gap-3"
       >
         <!-- pets cards -->
         <div
@@ -111,7 +149,7 @@
         <!-- pets Image -->
         <div
           id="petsImageContainer"
-          class="lg:col-start-4 border border-color1.1 p-5 grid justify-between items-start grid-cols-2 gap-6 rounded-xl h-fit"
+          class="lg:col-start-4 border border-color1.1 p-5 xl:p-3 grid justify-between items-start grid-cols-2 gap-6 xl:gap-3 rounded-xl h-fit hidden"
         ></div>
       </section>
       <!-- Modal -->

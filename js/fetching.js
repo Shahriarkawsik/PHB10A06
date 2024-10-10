@@ -23,6 +23,7 @@ function addActiveClass(btnId){
 // display single img on right div
 function showSingleImg(imgLink){
   const petsImageContainer = document.getElementById("petsImageContainer");
+  petsImageContainer.classList.remove("hidden");
   const img = document.createElement("img");
   img.classList.add("rounded-md");
   img.setAttribute("src", imgLink);
