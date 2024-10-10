@@ -1,5 +1,7 @@
 # PHB10A06 :Pet-Adoption
 
+## Live link: https://shahriarkawsik.github.io/PHB10A06
+
 ## Description
 
 Paddy (Pet Adoption Platform) is an online shop for those people who are really interested for buying various pets like cats, dogs, and rabbits. We supply great quality breed. These breeds are also vaccinated so you don't have to worry about being harm. So, if you intend to buy pets you are welcomed.
@@ -29,3 +31,4 @@ Paddy (Pet Adoption Platform) is an online shop for those people who are really 
 ## Live links
 
 1. Live link: [https://phb10a06-petadoption.netlify.app/](https://phb10a06-petadoption.netlify.app/)
+2. Live link: [https://shahriarkawsik.github.io/PHB10A06](https://shahriarkawsik.github.io/PHB10A06)
