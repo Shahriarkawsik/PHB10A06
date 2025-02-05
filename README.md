@@ -28,4 +28,6 @@ Paddy (Pet Adoption Platform) is an online shop for those people who are really 
 
 ## Live links
 
-1. Live link: [https://phb10a06-petadoption.netlify.app/](https://phb10a06-petadoption.netlify.app/)
+1.Netlify Live link: [https://phb10a06-petadoption.netlify.app/](https://phb10a06-petadoption.netlify.app/)
+
+2.Github Live link: [https://shahriarkawsik.github.io/PHB10A06](https://shahriarkawsik.github.io/PHB10A06)
